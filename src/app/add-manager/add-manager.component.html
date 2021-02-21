@@ -1,0 +1,25 @@
+<div style="margin: auto; width: 100%; border: 3px solid #73AD21;">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Add a new manager</mat-card-title>
+    </mat-card-header>
+    <mat-card-content><br>
+      <mat-progress-bar mode="buffer" *ngIf="progressBar"></mat-progress-bar>
+      <form>
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Enter firstName</mat-label>
+          <input matInput type="text" placeholder="firstName" name="firstName" [(ngModel)]="manager.firstName" #firstName="ngModel" required>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Enter lastName</mat-label>
+          <input matInput type="text" placeholder="lastName" name="lastName" [(ngModel)]="manager.lastName" #lastName="ngModel" required>
+        </mat-form-field><br>
+
+        <button mat-raised-button color="primary"
+          [disabled]="firstName.invalid || lastName.invalid"
+          (click)="addManager()" style="width: 10em !important">Save</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

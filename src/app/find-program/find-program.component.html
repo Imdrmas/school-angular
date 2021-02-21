@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Program: {{program.name}}</mat-card-title>
+    <mat-card-subtitle>Created at: {{program.createdAt|date}} </mat-card-subtitle>
+  </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content><br>
+      <p style="padding: 10px; color: #333; background: #f5f6fa;">
+        {{program.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions><br>
+      <button mat-stroked-button color="accent" (click)="deleteProgram(program.id)" >Delete program</button>
+      <button mat-stroked-button color="primary" (click)="updateProgram(program.id)">Update program</button>
+      <button mat-stroked-button color="primary" (click)="addCoefficient(program.id)">Add a new coefficient</button>
+    </mat-card-actions>
+</mat-card>

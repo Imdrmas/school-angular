@@ -1,0 +1,25 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{activity.type}}</mat-card-title>
+    <mat-card-subtitle>{{activity.createdAt|date}}</mat-card-subtitle>
+  </mat-card-header>
+    <mat-card-content *ngIf="activity!=null">
+      <mat-list>
+        <mat-divider></mat-divider>
+        <mat-list-item> <strong>{{activity.day}}</strong> </mat-list-item>
+        <mat-list-item>Date: {{activity.date|date: 'dd/MM/yyyy'}}</mat-list-item>
+        <mat-divider style="width: 180px !important;"></mat-divider>
+        <mat-list-item>Start: {{activity.startDate}}</mat-list-item>
+        <mat-divider style="width: 180px !important;"></mat-divider>
+        <mat-list-item>End: {{activity.endDate}}</mat-list-item>
+        <mat-divider style="width: 180px !important;"></mat-divider>
+      </mat-list>
+      <p style="padding: 10px; color: #333; background: #f5f6fa;">
+        {{activity.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions><br>
+      <button mat-stroked-button color="accent" (click)="deleteActivity(activity.id)" >Delete activity</button>
+      <button mat-stroked-button color="primary" (click)="updateActivity(activity.id)">Update activity</button>
+    </mat-card-actions>
+</mat-card>

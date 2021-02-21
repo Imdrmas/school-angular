@@ -1,0 +1,26 @@
+#container
+{
+    width:100%;
+}
+
+#left, #center, #right
+{
+    width:32%;
+    float:left;
+    text-align:center;
+}
+#center
+{
+  overflow:hidden;
+  margin: 0 1%;
+
+}
+mat-card-title,
+mat-card-subtitle {
+  padding-left: 80px;
+  color: #ecf0f1;
+}
+#container i {
+  font-size: 40px;
+  color: #ecf0f1;
+}

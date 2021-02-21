@@ -1,0 +1,66 @@
+
+.full-height {
+  background: #f1f2f6;
+}
+
+.root {
+  width: 100%;
+  font-size: 16px;
+  display: block;
+  background: #f5f6fa;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+a {
+  font-family: initial;
+  color: #2f3542;
+  text-decoration: none;
+}
+
+#mat-icon-plus {
+  color: #666a6c;
+  font-size: 24px;
+  margin-top: 4px;
+}
+
+.root:hover {
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  cursor: pointer;
+}
+
+#chevronIcon {
+  cursor: pointer;
+}
+
+.mat-tree-node {
+  margin-bottom: -15px;
+}
+
+h2 {
+  background: #e58e26;
+  padding: 0 16px;
+  border-radius: 5px;
+}
+
+.linkActive {
+  background-color: #bcffb6 !important;
+  padding: 2px 10px 0 3px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #a94442 !important;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+.content-logo {
+  padding-top: 15px;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+.content-logo .fa-user-graduate{
+  font-size: 24px;
+  color: #2d3436;
+}

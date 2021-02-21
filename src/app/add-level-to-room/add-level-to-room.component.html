@@ -1,0 +1,23 @@
+<div style="margin: auto; width: 100%; border: 3px solid #73AD21;">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Add a new course</mat-card-title>
+    </mat-card-header>
+    <mat-card-content><br>
+      <mat-progress-bar mode="buffer" *ngIf="progressBar"></mat-progress-bar>
+      <form>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>Please choose a level</mat-label>
+          <select matNativeControl required (change)="onSelecLevel($event)">
+            <option selected disabled>Levels</option>
+            <option *ngFor="let s of levels" [value]="s.id">{{s.label}}</option>
+          </select>
+        </mat-form-field><br>
+
+        <button mat-raised-button color="accent"
+          (click)="cancel()" style="width: 10em !important">Cancel</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

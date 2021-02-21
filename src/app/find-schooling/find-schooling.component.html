@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+    <mat-card-content>
+     <h2 style="margin-left: 15px;">Year: {{schooling.year}}</h2>
+     <mat-card-subtitle>Created at: {{schooling.createdAt|date}}</mat-card-subtitle>
+      <p style="padding: 10px; color: #333; background: #f5f6fa;">
+        {{schooling.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions><br>
+      <button mat-stroked-button color="accent" (click)="deleteSchooling(schooling.id)" >Delete activity</button>
+      <button mat-stroked-button color="primary" (click)="updateSchooling(schooling.id)">Update activity</button>
+      <button mat-stroked-button color="primary" (click)="addLevel(schooling.id)">Add level</button>
+    </mat-card-actions>
+</mat-card>

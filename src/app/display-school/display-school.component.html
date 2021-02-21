@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Welcome to {{school.name}} </mat-card-title>
+    <mat-card-subtitle>{{school.createdAt|date}}</mat-card-subtitle>
+  </mat-card-header><hr>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <div mat-line style="color: #222f3e;">
+           <h2 *ngIf="manager!=null">Manager: {{manager.firstName}} {{manager.lastName}}
+            <span class="material-icons" (click)="deleteManager(manager.id, school.id)" style="cursor: pointer; color: #c0392b;">close</span>
+          </h2>
+         </div>
+        <div mat-line style="color: #222f3e;">City: {{school.city}}</div>
+        <div mat-line style="color: #222f3e;">Department: {{school.department}}</div>
+      </mat-list-item>
+    </mat-list><br>
+    <mat-chip-list cdkDropList cdkDropListOrientation="horizontal">
+      <mat-chip>Open: {{school.open}} </mat-chip>
+      <mat-chip>Close: {{school.close}} </mat-chip>
+     </mat-chip-list>
+     <p style="background: #f5f6fa; padding: 10px; border-radius: 5px; color: #444;">
+       {{school.description}}
+     </p>
+  </mat-card-content><hr>
+  <mat-card-actions><br>
+    <button mat-stroked-button color="accent" (click)="editManager(manager.id)" *ngIf="manager!=null">Edit the manager</button>
+    <button mat-stroked-button color="accent" (click)="addManager(school.id)" *ngIf="manager==null">Add a manager</button>
+    <button mat-stroked-button color="primary" (click)="addActivity(school.id)">Add an activity</button>
+    <button mat-stroked-button color="primary" (click)="addSchoolling(school.id)">Add a schooling</button>
+    <button mat-stroked-button color="primary" (click)="addRoom(school.id)">Add a room</button>
+    <button mat-stroked-button color="primary" (click)="addSubject(school.id)">Add a subject</button>
+    <button mat-stroked-button color="primary" (click)="addExam(school.id)">Add an exam</button>
+  </mat-card-actions>
+</mat-card>

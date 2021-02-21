@@ -1,0 +1,36 @@
+
+
+<div style="width: 30%; float:left">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Find all schools </mat-card-title>
+    </mat-card-header><hr>
+    <mat-card-content>
+      <mat-list *ngFor="let school of schools">
+        <mat-list-item>
+          <mat-icon mat-list-icon>school</mat-icon>
+          <div mat-line style="cursor: pointer; color: #73AD21;" [routerLink]="['/find-school/', school.id]">{{school.name}}</div>
+          <div mat-line style="color: #99a1a8;"> {{school.createdAt|date}} </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+      <h4 style="color: rgba(117, 114, 114, 0.87); margin-top: 240px; background: #f2f2f2; padding: 5px 10px;">All copy right reserved by issamdrmas</h4>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div style="width: 70%; float:right">
+  <div style="margin: auto; width: 50%; border: 3px solid #73AD21; padding: 10px; margin-top: 40px;">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Welcome to gestion school</mat-card-title>
+      </mat-card-header><hr>
+      <mat-card-content>
+        <i class="fas fa-school" style="font-size: 200px; margin-left: 130px;"></i>
+      </mat-card-content><hr>
+      <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="addSchool()">Add a new school</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

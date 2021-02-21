@@ -1,0 +1,25 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Exam of <strong style="color: #4CAF50; text-decoration: underline;">{{subject?.name}}</strong> subject</mat-card-title>
+    <mat-card-subtitle>{{exam.createdAt|date}}</mat-card-subtitle>
+  </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-divider></mat-divider>
+        <mat-list-item>Date: {{exam.date|date: 'dd/MM/yyyy'}}</mat-list-item>
+        <mat-divider style="width: 180px !important;"></mat-divider>
+        <mat-list-item>Start: {{exam.start}}</mat-list-item>
+        <mat-divider style="width: 180px !important;"></mat-divider>
+        <mat-list-item>End: {{exam.end}}</mat-list-item>
+        <mat-divider style="width: 180px !important;"></mat-divider>
+      </mat-list>
+      <p style="padding: 10px; color: #333; background: #f5f6fa;">
+        {{exam.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions><br>
+      <button mat-stroked-button color="accent" (click)="deleteExam(exam.id, subject.id)" >Delete exam</button>
+      <button mat-stroked-button color="primary" (click)="updateExam(exam.id)">Update exam</button>
+      <button mat-stroked-button color="primary" (click)="addNote(exam.id)">Add note</button>
+    </mat-card-actions>
+</mat-card>

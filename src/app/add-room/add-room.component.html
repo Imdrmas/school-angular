@@ -1,0 +1,34 @@
+<div style="margin: auto; width: 100%; border: 3px solid #73AD21;">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Add a new room</mat-card-title>
+    </mat-card-header>
+    <mat-card-content><br>
+      <mat-progress-bar mode="buffer" *ngIf="progressBar"></mat-progress-bar>
+      <form>
+        <mat-form-field style="width: 100%;">
+          <mat-label>Code</mat-label>
+          <input type="text" matInput placeholder="Code" name="code"
+                 [(ngModel)]="room.code" #code="ngModel" required>
+        </mat-form-field> <br>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>Capacity</mat-label>
+          <input type="number" matInput placeholder="Capacity" name="capacity"
+                 [(ngModel)]="room.capacity" #capacity="ngModel" required>
+        </mat-form-field> <br>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>Enter description</mat-label>
+          <textarea matInput placeholder="Description" name="description" [(ngModel)]="room.description"
+            #description="ngModel"></textarea>
+        </mat-form-field><br>
+
+        <button mat-raised-button color="primary"
+          [disabled]="capacity.invalid || description.invalid
+          || code.invalid"
+          (click)="addRoom()" style="width: 10em !important">Save</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

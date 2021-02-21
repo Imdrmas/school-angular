@@ -1,0 +1,37 @@
+<div style="margin: auto; width: 100%; border: 3px solid #73AD21;">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Add a new subject</mat-card-title>
+    </mat-card-header>
+    <mat-card-content><br>
+      <mat-progress-bar mode="buffer" *ngIf="progressBar"></mat-progress-bar>
+      <form>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput placeholder="Name" name="name"
+                 [(ngModel)]="subject.name" #name="ngModel" required>
+        </mat-form-field> <br>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>Description</mat-label>
+          <textarea  matInput placeholder="Description" name="description"
+                     [(ngModel)]="subject.description" #description="ngModel" required></textarea>
+        </mat-form-field>
+
+        <div>
+          <span [style.background]="arrayColors[selectedColor]"
+                [cpToggle]="true"
+                [cpDialogDisplay]="'inline'"
+                [cpCancelButton]="true"
+                [(colorPicker)]="arrayColors[selectedColor]"
+                (colorPickerChange)="updateColor($event)" ></span>
+          </div><br>
+
+        <button mat-raised-button color="primary"
+          [disabled]="name.invalid || description.invalid"
+          (click)="addMatter()" style="width: 10em !important">Save</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

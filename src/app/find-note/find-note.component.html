@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Note score:
+      <button mat-mini-fab disabled style="color: #27ae60">
+      {{note.score}}
+    </button></mat-card-title>
+    <mat-card-subtitle>Created at: {{note.createdAt|date}} </mat-card-subtitle>
+  </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content><br>
+      <p style="padding: 10px; color: #333; background: #f5f6fa;">
+        {{note.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions><br>
+      <button mat-stroked-button color="accent" (click)="deleteNote(note.id)" >Delete note</button>
+      <button mat-stroked-button color="primary" (click)="updateNote(note.id)">Update note</button>
+    </mat-card-actions>
+</mat-card>

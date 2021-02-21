@@ -1,0 +1,56 @@
+<div style="margin: auto; width: 100%; border: 3px solid #73AD21;">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Add a new activity</mat-card-title>
+    </mat-card-header>
+    <mat-card-content><br>
+      <mat-progress-bar mode="buffer" *ngIf="progressBar"></mat-progress-bar>
+      <form>
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Enter type</mat-label>
+          <input matInput type="text" placeholder="type" name="type" [(ngModel)]="activity.type" #type="ngModel" required>
+        </mat-form-field><br>
+
+        <div style="margin-bottom: 15px;">
+          <strong>Day</strong>
+        </div>
+
+        <mat-radio-group [(ngModel)]="weekDay" name="weekDay" (change)="onSelectedDay()">
+          <mat-radio-button value="Monday">Monday</mat-radio-button>
+          <mat-radio-button value="Tuesday">Tesday</mat-radio-button>
+          <mat-radio-button value="Wednesday">Wendesday</mat-radio-button>
+          <mat-radio-button value="Thursday">Thursday</mat-radio-button>
+          <mat-radio-button value="Friday">Friday</mat-radio-button>
+        </mat-radio-group> <hr>
+
+        <mat-form-field style="width: 100%;">
+          <input type="date" matInput name="date" min="minDate"
+                 [(ngModel)]="activity.date" #date="ngModel" required (change)="onDateTime($event)">
+        </mat-form-field> <br>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>START</mat-label>
+          <input type="time" matInput placeholder="startTime" name="startTime"
+                 [(ngModel)]="activity.startDate" #startTime="ngModel" required>
+        </mat-form-field> <br>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>END</mat-label>
+          <input type="time" matInput placeholder="endTime" name="endTime"
+                 [(ngModel)]="activity.endDate" #endTime="ngModel" required>
+        </mat-form-field> <br>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>Enter description</mat-label>
+          <textarea matInput placeholder="Description" name="description" [(ngModel)]="activity.description"
+            #description="ngModel"></textarea>
+        </mat-form-field><br>
+
+        <button mat-raised-button color="primary"
+          [disabled]="type.invalid || description.invalid
+          || startTime.invalid  || endTime.invalid"
+          (click)="addActivity()" style="width: 10em !important">Save</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

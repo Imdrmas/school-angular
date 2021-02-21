@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Coefficien grade: {{coefficien.grade}}</mat-card-title>
+    <mat-card-subtitle>Created at: {{coefficien.createdAt|date}} </mat-card-subtitle>
+  </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content><br>
+      <p style="padding: 10px; color: #333; background: #f5f6fa;">
+        {{coefficien.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions><br>
+      <button mat-stroked-button color="accent" (click)="deleteCoefficien(coefficien.id)" >Delete coefficien</button>
+      <button mat-stroked-button color="primary" (click)="updateCoefficien(coefficien.id)">Update coefficien</button>
+    </mat-card-actions>
+</mat-card>

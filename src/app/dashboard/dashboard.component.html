@@ -1,0 +1,138 @@
+<div id="container">
+  <div id="left">
+    <mat-card style="background-color: #9b59b6">
+      <mat-card-header>
+        <mat-card-title *ngIf="schoolLength>0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            {{schoolLength}}
+          </button>
+        </mat-card-title>
+        <mat-card-title *ngIf="schoolLength==0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            0
+          </button>
+        </mat-card-title>
+        <mat-card-subtitle style="font-weight: bold">Schools</mat-card-subtitle>
+        <mat-card-subtitle style="margin-top: -14px;">Total schools</mat-card-subtitle>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <i class="fas fa-school"></i>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div id="center">
+    <mat-card style="background-color: #3498db">
+      <mat-card-header>
+        <mat-card-title *ngIf="activityLength>0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            {{activityLength}}
+          </button>
+        </mat-card-title>
+        <mat-card-title *ngIf="activityLength==0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            0
+          </button>
+        </mat-card-title>
+        <mat-card-subtitle style="font-weight: bold">Activities</mat-card-subtitle>
+        <mat-card-subtitle style="margin-top: -14px;">Total activities</mat-card-subtitle>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <i class="fas fa-swimmer"></i>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div id="right">
+    <mat-card style="background-color: #e67e22">
+      <mat-card-header>
+        <mat-card-title *ngIf="subjectLength>0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            {{subjectLength}}
+          </button>
+        </mat-card-title>
+        <mat-card-title *ngIf="subjectLength==0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            0
+          </button>
+        </mat-card-title>
+        <mat-card-subtitle style="font-weight: bold">Subjects</mat-card-subtitle>
+        <mat-card-subtitle style="margin-top: -14px;">Total subjects</mat-card-subtitle>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <i class="far fa-copy"></i>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+
+<div id="container">
+  <div id="left" style="margin-top: 20px !important;">
+    <mat-card style="background-color: #16a085">
+      <mat-card-header>
+        <mat-card-title *ngIf="examsLength>0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            {{examsLength}}
+          </button>
+        </mat-card-title>
+        <mat-card-title *ngIf="examsLength==0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            0
+          </button>
+        </mat-card-title>
+        <mat-card-subtitle style="font-weight: bold">Exams</mat-card-subtitle>
+        <mat-card-subtitle style="margin-top: -14px;">Total exams</mat-card-subtitle>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <i class="fas fa-book-open"></i>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div id="center" style="margin-top: 20px !important;">
+    <mat-card style="background-color: #c0392b">
+      <mat-card-header>
+        <mat-card-title *ngIf="roomLength>0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            {{roomLength}}
+          </button>
+        </mat-card-title>
+        <mat-card-title *ngIf="roomLength==0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            0
+          </button>
+        </mat-card-title>
+        <mat-card-subtitle style="font-weight: bold">Rooms</mat-card-subtitle>
+        <mat-card-subtitle style="margin-top: -14px;">Total rooms</mat-card-subtitle>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <i class="far fa-hospital"></i>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div id="right" style="margin-top: 20px !important;">
+    <mat-card style="background-color: #7f8c8d">
+      <mat-card-header>
+        <mat-card-title *ngIf="schoolingLength>0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            {{schoolingLength}}
+          </button>
+        </mat-card-title>
+        <mat-card-title *ngIf="schoolingLength==0">
+          <button mat-mini-fab disabled style="color: #ecf0f1">
+            0
+          </button>
+        </mat-card-title>
+        <mat-card-subtitle style="font-weight: bold">Schoolings</mat-card-subtitle>
+        <mat-card-subtitle style="margin-top: -14px;">Total schoolings</mat-card-subtitle>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <i class="fas fa-calendar-alt"></i>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

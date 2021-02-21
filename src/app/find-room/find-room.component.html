@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Room: {{room.code}}</mat-card-title>
+    <mat-card-title>Capacity: {{room.capacity}}</mat-card-title>
+    <mat-card-subtitle>Created at: {{room.createdAt|date}} </mat-card-subtitle>
+  </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content><br>
+      <mat-list>
+        <h2 style="margin-left: 15px;">Levels</h2>
+        <mat-list-item style="color: cadetblue;" *ngIf="level!=null">
+          {{level.label}}
+          <span class="material-icons" style="color: #c0392b; margin-left: 15px; cursor: pointer;" (click)="deleteLevelFromRoom(room.id, level.id)">
+            close
+            </span>
+        </mat-list-item>
+        <mat-list-item style="color: cadetblue;" *ngIf="level==null"> No level</mat-list-item>
+      </mat-list>
+      <p style="padding: 10px; color: #333; background: #f5f6fa;">
+        {{room.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions><br>
+      <button mat-stroked-button color="accent" (click)="deleteRoom(room.id)" >Delete room</button>
+      <button mat-stroked-button color="primary" (click)="updateRoom(room.id)">Update room</button>
+      <button mat-stroked-button color="primary" (click)="addLevelToRoom(room.id)" *ngIf="level==null">Add level to this room </button>
+    </mat-card-actions>
+</mat-card>

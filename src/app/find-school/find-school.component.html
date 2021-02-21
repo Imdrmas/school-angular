@@ -1,0 +1,52 @@
+<div style="width: 30%; float:left">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> {{school.name}} </mat-card-title>
+      <mat-card-subtitle>{{school.createdAt|date}}</mat-card-subtitle>
+    </mat-card-header>
+    <hr>
+    <mat-card-content>
+      <mat-list-item><i class="fas fa-th-list" style="margin: 0 15px 0 10px;"></i>
+        <a style="color: #4CAF50;" [routerLink]="['/find-school/', school.id]" routerLinkActive="router-link-active" >Dashbaord</a></mat-list-item>
+      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding matTreeNodeToggle>
+
+          <mat-basic-chip class="checklist-leaf-node root" [routerLink]="[node.routerLink]"
+            routerLinkActive="linkActive">
+            <a title="{{node.title}}">
+              <i [ngClass]="node.clazz" style="margin-right: 5px; color: #666a6c;"></i>
+              {{node.name}}
+            </a>
+          </mat-basic-chip>
+        </mat-tree-node>
+
+        <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+          <span [attr.aria-label]="'toggle ' + node.filename" id="chevronIcon" matTreeNodeToggle
+            style="background: transparent;">
+            <mat-icon class="mat-icon-rtl-mirror" id="mat-icon-plus">
+              {{treeControl.isExpanded(node) ? 'arrow_drop_down' : 'arrow_right'}}
+            </mat-icon>
+          </span>
+          <mat-basic-chip class="root" [routerLink]="[node.routerLink]" routerLinkActive="linkActive">
+
+            <a title="{{node.title}}">
+              <i [ngClass]="node.clazz" style="margin-right: 5px;  color: #666a6c;"></i>
+              {{node.name}}
+            </a>
+
+          </mat-basic-chip>
+        </mat-tree-node>
+      </mat-tree>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="editSchool(school.id)">Update school</button>
+      <button mat-raised-button color="warn" (click)="deleteSchool()">Delete school</button>
+      <button mat-raised-button [routerLink]="['/find-school/' + school.id + '/display-school/', school.id]">School
+        details</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div style="width: 68%; float:right; margin-top: 30px; padding: 1%;">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,48 @@
+<div style="margin: auto; width: 40%; border: 3px solid #73AD21;">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Add a new course</mat-card-title>
+    </mat-card-header>
+    <mat-card-content><br>
+      <mat-progress-bar mode="buffer" *ngIf="progressBar"></mat-progress-bar>
+      <form>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>Please choose a subject</mat-label>
+          <select matNativeControl required (change)="onSelecSubject($event)">
+            <option selected disabled>Subjects</option>
+            <option *ngFor="let s of subjects" [value]="s.id" [selected]="s.name==subject.name">{{s.name}}</option>
+          </select>
+        </mat-form-field><br>
+
+        <mat-form-field style="width: 100%;">
+          <input type="date" matInput name="date" min="minDate"
+                 [(ngModel)]="course.date" #date="ngModel" required (change)="onDateTime($event)">
+        </mat-form-field> <br>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>START</mat-label>
+          <input type="time" matInput placeholder="startTime" name="startTime"
+                 [(ngModel)]="course.startDate" #startTime="ngModel" required>
+        </mat-form-field> <br>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>END</mat-label>
+          <input type="time" matInput placeholder="endTime" name="endTime"
+                 [(ngModel)]="course.endDate" #endTime="ngModel" required>
+        </mat-form-field> <br>
+
+        <mat-form-field style="width: 100%;">
+          <mat-label>Enter description</mat-label>
+          <textarea matInput placeholder="Description" name="description" [(ngModel)]="course.description"
+            #description="ngModel"></textarea>
+        </mat-form-field><br>
+
+        <button mat-raised-button color="primary"
+          [disabled]="description.invalid
+          || startTime.invalid  || endTime.invalid"
+          (click)="addCourse()" style="width: 10em !important">Save</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

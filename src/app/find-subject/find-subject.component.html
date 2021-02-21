@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header [style.background-color]="subject.color" style="padding-top: 10px; border-radius: 5px; margin-bottom: 10px;">
+    <mat-card-title>Subject: {{subject.name}}</mat-card-title>
+    <mat-card-subtitle>Created at: {{subject.createdAt|date}} </mat-card-subtitle>
+  </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content><br>
+      <p style="padding: 10px; color: #333; background: #f5f6fa;">
+        {{subject.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions><br>
+      <button mat-stroked-button color="accent"  (click)="deleteSubject(subject.id)" >Delete subject</button>
+      <button mat-stroked-button color="primary" (click)="updateSubject(subject.id)">Update subject</button>
+      <button mat-stroked-button color="primary" (click)="addProgram(subject.id)">Add a new program</button>
+    </mat-card-actions>
+</mat-card>
